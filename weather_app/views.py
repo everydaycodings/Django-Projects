@@ -13,8 +13,20 @@ def index(request):
     
     if request.method == "POST":
         form = CityForm(request.POST)
-        form.save()
-    
+
+        if form.is_valid():
+            new_city = form.cleaned_data["city"]
+            existing_city_count =  City.objects.filter(city=new_city).count()
+
+            if existing_city_count == 0:
+                r = requests.get(web.format(new_city)).json()
+                if r["cod"] == 200:
+                    form.save()
+                else:
+                    err_msg = "City Doesnot Exit!"
+            else:
+                err_msg = "City Already Exits in the Website!"
+                
     form = CityForm()
     cities = City.objects.all().order_by("-id")
     
