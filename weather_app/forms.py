@@ -5,4 +5,4 @@ class CityForm(ModelForm):
     class Meta:
         model = City
         fields = ["city"]
-        widgets = {"city": TextInput(attrs={"class": "input", "placeholder": "City Name"})}
+        widgets = {"city": TextInput(attrs={"class": "input", "placeholder": "City Name"})} 

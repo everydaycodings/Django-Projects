@@ -23,8 +23,8 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
-                    <form method="POST" >
-                    {% csrf_token %}
+                    <form method="POST">
+                        {% csrf_token %}
                         <div class="field has-addons">
                             <div class="control is-expanded">
                                 {{form.city}}
@@ -36,6 +36,9 @@
                             </div>
                         </div>
                     </form>
+                    {% if message %}
+                        <div class="notification {{message_class}}">{{message}}</div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -66,10 +69,15 @@
                                         <span class="subtitle"></span>
                                         <br>Humidity => {{weather.humidity}}%
                                         <span class="subtitle"></span>
-                                        <br> <h5> Desc => {{weather.desc}}</h5>
-                                         
+                                        <br><h5> Desc => {{weather.desc}}</h5>
+
                                     </p>
                                 </div>
+                            </div>
+                            <div class="media-right">
+                                <a href="{% url 'delete_city' weather.city %}">
+                                    <button class="delete"></button>
+                                </a>
                             </div>
                         </article>
                     </div>
