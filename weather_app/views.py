@@ -4,8 +4,6 @@ from .models import City
 from .forms import CityForm
 # Create your views here.
 
-def error404(request, exception):
-    return render(request, "weather_app/error404.html")
 
 def index(request):
     
