@@ -24,6 +24,7 @@ urlpatterns = [
     path("weather", include("weather_app.urls")),
     path("wishlist", include("wish_list.urls")),
     path("photoshare/", include("photoshare.urls")),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+
 
 handler404 = "index_manager.views.error404"
