@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@login_required(login_url="login")
+
 def index(request):
     if request.method == "POST" and "suscribe" in request.POST:
         email = request.POST['email']
@@ -41,7 +41,7 @@ def index(request):
     return render(request, "photoshare/index.html", context)
 
 
-@login_required(login_url="login")
+
 def gallary(request):
 
     posts = Addpost.objects.order_by("-id")
@@ -73,7 +73,6 @@ def addpost(request):
     return render(request, "photoshare/submit_forms.html", context)
 
 
-@login_required(login_url="login")
 def contact(request):
 
     if request.method == "POST":
