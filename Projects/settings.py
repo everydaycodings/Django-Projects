@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "Breast_Cancer",
     "photoshare",
     "index_manager",
     "weather_app",
