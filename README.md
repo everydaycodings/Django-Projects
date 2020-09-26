@@ -4,7 +4,7 @@ All the projects for Django
 **Steps To run in Local Server:**<br>
 ``$ python pip install -r requirements.tx``<br>
 **then run**<br>
-``$ python manage.py runserver``<br>
+``$ python manage.py runserver``<br><br>
 
 
 **Live Demo For All The Apps:**<br>
